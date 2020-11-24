@@ -13,6 +13,12 @@
 		BF2964E32550F7F900D94859 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2964E22550F7F900D94859 /* Preview Assets.xcassets */; };
 		BF2964EE2550F7FA00D94859 /* FigmaMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2964ED2550F7FA00D94859 /* FigmaMovieTests.swift */; };
 		BF2964F92550F7FA00D94859 /* FigmaMovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2964F82550F7FA00D94859 /* FigmaMovieUITests.swift */; };
+		BF29650B2550F88100D94859 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29650A2550F88100D94859 /* MoviesView.swift */; };
+		BF2965132550F9C400D94859 /* TopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2965122550F9C400D94859 /* TopMenu.swift */; };
+		BF29651D255160D100D94859 /* MovieGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29651C255160D100D94859 /* MovieGridView.swift */; };
+		BF9518A4256CA46400CC8DB9 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BF9518A3256CA46300CC8DB9 /* Readme.md */; };
+		BF9518AD256CB68000CC8DB9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9518AC256CB68000CC8DB9 /* HomeView.swift */; };
+		BF9518B2256CD81500CC8DB9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9518B1256CD81400CC8DB9 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		BF2964F42550F7FA00D94859 /* FigmaMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigmaMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2964F82550F7FA00D94859 /* FigmaMovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaMovieUITests.swift; sourceTree = "<group>"; };
 		BF2964FA2550F7FA00D94859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF29650A2550F88100D94859 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
+		BF2965122550F9C400D94859 /* TopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenu.swift; sourceTree = "<group>"; };
+		BF29651C255160D100D94859 /* MovieGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridView.swift; sourceTree = "<group>"; };
+		BF9518A3256CA46300CC8DB9 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		BF9518AC256CB68000CC8DB9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BF9518B1256CD81400CC8DB9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,7 @@
 		BF2964CF2550F7F800D94859 = {
 			isa = PBXGroup;
 			children = (
+				BF9518A3256CA46300CC8DB9 /* Readme.md */,
 				BF2964DA2550F7F800D94859 /* FigmaMovie */,
 				BF2964EC2550F7FA00D94859 /* FigmaMovieTests */,
 				BF2964F72550F7FA00D94859 /* FigmaMovieUITests */,
@@ -97,6 +110,7 @@
 			children = (
 				BF2964DB2550F7F800D94859 /* FigmaMovieApp.swift */,
 				BF2964DD2550F7F800D94859 /* ContentView.swift */,
+				BF9518A8256CB2F400CC8DB9 /* View */,
 				BF2964DF2550F7F900D94859 /* Assets.xcassets */,
 				BF2964E42550F7F900D94859 /* Info.plist */,
 				BF2964E12550F7F900D94859 /* Preview Content */,
@@ -128,6 +142,26 @@
 				BF2964FA2550F7FA00D94859 /* Info.plist */,
 			);
 			path = FigmaMovieUITests;
+			sourceTree = "<group>";
+		};
+		BF2965092550F86500D94859 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				BF29650A2550F88100D94859 /* MoviesView.swift */,
+				BF29651C255160D100D94859 /* MovieGridView.swift */,
+				BF2965122550F9C400D94859 /* TopMenu.swift */,
+				BF9518B1256CD81400CC8DB9 /* SearchBar.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		BF9518A8256CB2F400CC8DB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF9518AC256CB68000CC8DB9 /* HomeView.swift */,
+				BF2965092550F86500D94859 /* Movies */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +269,7 @@
 			files = (
 				BF2964E32550F7F900D94859 /* Preview Assets.xcassets in Resources */,
 				BF2964E02550F7F900D94859 /* Assets.xcassets in Resources */,
+				BF9518A4256CA46400CC8DB9 /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2965132550F9C400D94859 /* TopMenu.swift in Sources */,
+				BF9518AD256CB68000CC8DB9 /* HomeView.swift in Sources */,
 				BF2964DE2550F7F800D94859 /* ContentView.swift in Sources */,
+				BF9518B2256CD81500CC8DB9 /* SearchBar.swift in Sources */,
+				BF29650B2550F88100D94859 /* MoviesView.swift in Sources */,
 				BF2964DC2550F7F800D94859 /* FigmaMovieApp.swift in Sources */,
+				BF29651D255160D100D94859 /* MovieGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
