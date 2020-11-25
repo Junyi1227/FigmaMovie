@@ -11,7 +11,8 @@ import SwiftUI
 struct FigmaMovieApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+//            HomeView()
+            MovieDetailView()
         }
     }
 }

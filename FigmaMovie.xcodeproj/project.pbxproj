@@ -19,6 +19,7 @@
 		BF9518A4256CA46400CC8DB9 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BF9518A3256CA46300CC8DB9 /* Readme.md */; };
 		BF9518AD256CB68000CC8DB9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9518AC256CB68000CC8DB9 /* HomeView.swift */; };
 		BF9518B2256CD81500CC8DB9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9518B1256CD81400CC8DB9 /* SearchBar.swift */; };
+		BFC84DF9256D02F30042820A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC84DF8256D02F30042820A /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BF9518A3256CA46300CC8DB9 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		BF9518AC256CB68000CC8DB9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BF9518B1256CD81400CC8DB9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BFC84DF8256D02F30042820A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +162,17 @@
 			children = (
 				BF9518AC256CB68000CC8DB9 /* HomeView.swift */,
 				BF2965092550F86500D94859 /* Movies */,
+				BFC84DF7256D02CA0042820A /* MovieDetail */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BFC84DF7256D02CA0042820A /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BFC84DF8256D02F30042820A /* MovieDetailView.swift */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				BF9518B2256CD81500CC8DB9 /* SearchBar.swift in Sources */,
 				BF29650B2550F88100D94859 /* MoviesView.swift in Sources */,
 				BF2964DC2550F7F800D94859 /* FigmaMovieApp.swift in Sources */,
+				BFC84DF9256D02F30042820A /* MovieDetailView.swift in Sources */,
 				BF29651D255160D100D94859 /* MovieGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
