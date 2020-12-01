@@ -11,8 +11,8 @@ import SwiftUI
 struct FigmaMovieApp: App {
     var body: some Scene {
         WindowGroup {
-//            HomeView()
-            FavouriteView()
+            HomeView()
+//            FavouriteView()
         }
     }
 }

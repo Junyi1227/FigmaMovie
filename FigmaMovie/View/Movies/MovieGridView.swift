@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct MovieGridView: View {
+    @ObservedObject var vm : MoviesViewModel
+
     private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
 
+    init(endpoint:APIService.Endpoint) {
+        vm = MoviesViewModel(endpoint: endpoint)
+    }
     var body: some View {
         
         ScrollView(.vertical) {
             LazyVGrid(columns: threeColumnGrid) {
-                ForEach(0..<5){i in
-                    MovieCardView().id("xxxx"+String(i))
+                ForEach(vm.movies?.results ?? []){ movie in
+                    MovieCardView(movie: movie)
                 }
             }
             .padding(.horizontal,16)
@@ -25,13 +30,14 @@ struct MovieGridView: View {
 
 struct MovieGridView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieGridView()
+        MovieGridView(endpoint: .popular)
     }
 }
 
 
 
 struct MovieCardView: View {
+    let movie : Movie
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             ZStack{
@@ -88,7 +94,7 @@ struct MovieCardView: View {
                 .padding(8)
             }
             VStack(alignment: .leading, spacing: 0){
-                Text("IP Man 4")
+                Text(movie.title ?? "")
                     .foregroundColor(.white)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 12))
@@ -98,20 +104,20 @@ struct MovieCardView: View {
                     .font(.custom("Gilroy", size: 8))
 
             }.padding(8)
-
-            
+    
         }
         .background(Color(#colorLiteral(red: 0.1095940247, green: 0.1086468026, blue: 0.1625134349, alpha: 1)))
         .cornerRadius(15)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(Color(#colorLiteral(red: 0.2703185678, green: 0.2691814005, blue: 0.3396263719, alpha: 1)),lineWidth: 2)
+                .stroke(Color(#colorLiteral(red: 0.2703185678, green: 0.2691814005, blue: 0.3396263719, alpha: 1)),
+                        lineWidth: 2)
         )
     }
 }
 
-struct MovieCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieCardView()
-    }
-}
+//struct MovieCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieCardView()
+//    }
+//}

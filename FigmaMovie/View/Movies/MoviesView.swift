@@ -20,8 +20,8 @@ struct MoviesView: View {
                     ScrollViewReader(content: { proxy in
                         HStack{
                             ForEach(0..<3) {i  in
-                                MovieGridView()
-                                    //this case also can use .global
+                                MovieGridView(endpoint: .popular)
+                                    //this case geometry also can use .global
                                     .frame(width: geometry.frame(in: .named("base scrollview")).size.width)
                                     .id(i)
                             }
