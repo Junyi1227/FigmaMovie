@@ -5,15 +5,15 @@
 //  Created by Junyi Wang on 2020/11/27.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 public struct APIService {
     let baseURL = URL(string: "https://api.themoviedb.org/3")!
     let apiKey = "1d9b898a212ea52e283351e521e17871"
     public static let shared = APIService()
     let decoder = JSONDecoder()
-    
+
     public enum APIError: Error {
         case noResponse
         case jsonDecodingError(error: Error)
@@ -31,7 +31,7 @@ public struct APIService {
         case personImages(person: Int)
         case genres
         case discover
-        
+
         func path() -> String {
             switch self {
             case .popular:
@@ -77,26 +77,24 @@ public struct APIService {
             }
         }
     }
-    
+
     public func GET<T: Codable>(endpoint: Endpoint,
                                 params: [String: String] = [String: String](),
                                 success: @escaping (_ response: T) -> Void,
                                 failure: @escaping (_ error: Error?) -> Void) {
-
         var queryItems = ["api_key": apiKey,
-                          "language":Locale.preferredLanguages[0]]
+                          "language": Locale.preferredLanguages[0]]
         queryItems = queryItems.merging(params) { $1 }
 
         AF.request(baseURL.appendingPathComponent(endpoint.path()), method: .get, parameters: queryItems)
-            .responseDecodable(of: T.self) { (response) in
-                
+            .responseDecodable(of: T.self) { response in
+
                 if let result = response.value {
                     success(result)
                     return
                 }
-                
+
                 failure(response.error)
-                
             }
     }
 }

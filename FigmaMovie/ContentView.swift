@@ -8,46 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var index:Int = 0
+    @State var index: Int = 0
     var body: some View {
-        Form{
+        Form {
             Section(header: Text("Menu")) {
-
                 Menu("Actions") {
-
-                    Button("Set TextEditor text to   'magic'"){
-
+                    Button("Set TextEditor text to   'magic'") {
 //                        someText = "magic"
-
                     }
 
                     Button("Turn first picker green") {
-
 //                        color = Color.green
-
-                    }                }
-
+                    }
+                }
             }
-
-
         }
     }
 }
-
 
 public struct GridView: View {
     private var threeColumnGrid = [GridItem(.flexible())]
     public var body: some View {
         ScrollView {
             LazyVGrid(columns: threeColumnGrid) {
-                ForEach(0..<5){i in
-                    ZStack{
+                ForEach(0 ..< 5) { num in
+                    ZStack {
                         Rectangle()
-                        Text("id:\(i)")
+                        Text("id:\(num)")
                             .foregroundColor(.white)
                     }
                     .frame(height: 400)
-                    .id(i)
+                    .id(num)
                 }
             }
         }

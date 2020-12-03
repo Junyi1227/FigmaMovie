@@ -20,6 +20,7 @@
 		BF29651D255160D100D94859 /* MovieGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29651C255160D100D94859 /* MovieGridView.swift */; };
 		BF85EDE12570AFFA007B3A4C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85EDE02570AFFA007B3A4C /* APIService.swift */; };
 		BF85EDE92570B0A5007B3A4C /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85EDE82570B0A5007B3A4C /* MoviesViewModel.swift */; };
+		BF85EE04257635C1007B3A4C /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85EE03257635C1007B3A4C /* MovieModel.swift */; };
 		BF9518A4256CA46400CC8DB9 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BF9518A3256CA46300CC8DB9 /* Readme.md */; };
 		BF9518AD256CB68000CC8DB9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9518AC256CB68000CC8DB9 /* HomeView.swift */; };
 		BF9518B2256CD81500CC8DB9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9518B1256CD81400CC8DB9 /* SearchBar.swift */; };
@@ -70,6 +71,7 @@
 		BF29651C255160D100D94859 /* MovieGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridView.swift; sourceTree = "<group>"; };
 		BF85EDE02570AFFA007B3A4C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BF85EDE82570B0A5007B3A4C /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		BF85EE03257635C1007B3A4C /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		BF9518A3256CA46300CC8DB9 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		BF9518AC256CB68000CC8DB9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BF9518B1256CD81400CC8DB9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				BF2964DB2550F7F800D94859 /* FigmaMovieApp.swift */,
 				BF2964DD2550F7F800D94859 /* ContentView.swift */,
+				BF85EE02257635A9007B3A4C /* Model */,
 				BF85EDED2570B0B0007B3A4C /* ViewModel */,
 				BF85EDDF2570AF9A007B3A4C /* APIService */,
 				BF9518A8256CB2F400CC8DB9 /* View */,
@@ -219,6 +222,14 @@
 				BF85EDE82570B0A5007B3A4C /* MoviesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF85EE02257635A9007B3A4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF85EE03257635C1007B3A4C /* MovieModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BF9518A8256CB2F400CC8DB9 /* View */ = {
@@ -399,7 +410,7 @@
 		};
 		4127B53C61C5E3582B6481A7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -473,8 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n\n";
 		};
 		FD45E1666509F98B3FD5BF05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -505,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF85EE04257635C1007B3A4C /* MovieModel.swift in Sources */,
 				BFC84E02256DF3E00042820A /* FavouriteView.swift in Sources */,
 				BF2965132550F9C400D94859 /* TopMenu.swift in Sources */,
 				BF9518AD256CB68000CC8DB9 /* HomeView.swift in Sources */,

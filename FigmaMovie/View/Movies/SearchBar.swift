@@ -12,14 +12,14 @@ struct SearchBar: View {
     @State private var isEditing = false
     var body: some View {
         HStack {
-            HStack{
+            HStack {
                 Image("location")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25, height: 25)
-                
-                //TODO:SwiftUI textfield not support placeholder color
-                //It must custom.
+
+                // TODO: SwiftUI textfield not support placeholder color
+                // It must custom.
                 TextField("Search ...", text: $text)
                     .background(Color.clear)
                     .onTapGesture {
@@ -28,18 +28,20 @@ struct SearchBar: View {
                 if isEditing {
                     Button(action: {
                         self.text = ""
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    }) {
+                        UIApplication.shared.sendAction(
+                            #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil
+                        )
+                    }, label: {
                         Image(systemName: "multiply.circle.fill")
                             .foregroundColor(.gray)
                             .padding(.trailing, 8)
-                    }
+                    })
                 }
             }
             .padding(8)
             .padding(.horizontal, 16)
             .cornerRadius(8)
-            
+
             Image("search")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -47,9 +49,9 @@ struct SearchBar: View {
         }
     }
 }
+
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        
         SearchBar(text: .constant("aaaa"))
     }
 }

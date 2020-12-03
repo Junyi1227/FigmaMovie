@@ -8,33 +8,31 @@
 import SwiftUI
 
 struct MoviesView: View {
-    @State var menuIndex:Int = 0
+    @State var menuIndex: Int = 0
     @State var searchText = ""
     var body: some View {
-        VStack{
+        VStack {
             SearchBar(text: $searchText)
                 .padding(16)
-            TopMenu(selection: $menuIndex, titles: ["Near You","Coming Soon","Permiers"])
-            GeometryReader(){ geometry in
-                ScrollView(.horizontal){
+            TopMenu(selection: $menuIndex, titles: ["Near You", "Coming Soon", "Permiers"])
+            GeometryReader { geometry in
+                ScrollView(.horizontal) {
                     ScrollViewReader(content: { proxy in
-                        HStack{
-                            ForEach(0..<3) {i  in
+                        HStack {
+                            ForEach(0 ..< 3) { num in
                                 MovieGridView(endpoint: .popular)
-                                    //this case geometry also can use .global
+                                    // this case geometry also can use .global
                                     .frame(width: geometry.frame(in: .named("base scrollview")).size.width)
-                                    .id(i)
+                                    .id(num)
                             }
-                        }.onChange(of: menuIndex) { target in
+                        }.onChange(of: menuIndex) { _ in
                             print(menuIndex)
                             withAnimation {
                                 proxy.scrollTo(menuIndex)
                             }
-
                         }
                     })
                 }.coordinateSpace(name: "base scrollview")
-
             }
 //            Button(action: {
 //                //TODO:怎麼回傳回去啊@@
