@@ -9,7 +9,8 @@ import Foundation
 
 // MARK: - Paginated
 
-struct PaginatedResponse<T: Codable>: Codable {
+struct PaginatedResponse<T: Codable>: Codable,Identifiable {
+    var id = UUID()
     let totalResults, page, totalPages: Int?
     let results: [T]
 

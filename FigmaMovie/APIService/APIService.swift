@@ -9,8 +9,21 @@ import Alamofire
 import Foundation
 
 public struct APIService {
+
     let baseURL = URL(string: "https://api.themoviedb.org/3")!
     let apiKey = "1d9b898a212ea52e283351e521e17871"
+
+    struct API_Url {
+        static let DmgUrl = "https://dmgapi.dmg.tv"
+
+        static let qaList = DmgUrl + "/api/App/FAQ/List"
+        static let messageList = DmgUrl + "/api/App/Message/List"
+        static let unRead = DmgUrl + "/api/App/Message/UnRead"
+        static let setRead = DmgUrl + "/api/App/Message/SetRead"
+
+        static let carrier = "https://www.dafeng.tv/pay_method/CarrierApply.php"
+    }
+
     public static let shared = APIService()
     let decoder = JSONDecoder()
 

@@ -1,0 +1,6 @@
+framework module Pods_FigmaMovie_FigmaMovieUITests {
+  umbrella header "Pods-FigmaMovie-FigmaMovieUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

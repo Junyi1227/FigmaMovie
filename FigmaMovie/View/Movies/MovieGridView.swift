@@ -6,31 +6,23 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MovieGridView: View {
-    @ObservedObject var moviesVM: MoviesViewModel
+//    @Binding var moviesVM: MoviesViewModel
+    let moviePage: PaginatedResponse<Movie>
 
-    private var threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
-
-    init(endpoint: APIService.Endpoint) {
-        moviesVM = MoviesViewModel(endpoint: endpoint)
-    }
+    let threeColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
 
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: threeColumnGrid) {
-                ForEach(moviesVM.movies?.results ?? []) { movie in
+                ForEach(moviePage.results) { movie in
                     MovieCardView(movie: movie)
                 }
             }
             .padding(.horizontal, 16)
         }
-    }
-}
-
-struct MovieGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieGridView(endpoint: .popular)
     }
 }
 
@@ -40,7 +32,8 @@ struct MovieCardView: View {
         VStack(alignment: .leading, spacing: 0) {
             ZStack {
                 ZStack(alignment: .top) {
-                    Image("IPMan")
+                    WebImage(url: URL(string: "https://image.tmdb.org/t/p/w154" + (movie.posterPath ?? "")))
+                        .placeholder(Image("IP Man"))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
 

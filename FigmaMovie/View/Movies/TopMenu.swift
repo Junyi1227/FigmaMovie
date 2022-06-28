@@ -8,13 +8,7 @@
 import SwiftUI
 // TODO: 未來改成可以左右滑動的menu/固定寬的menu 參數可自訂
 struct TopMenu: View {
-    @State var selectIndex: Int = 0
-    @Binding var selection: Int
-//    {
-//        didSet {
-//            selectIndex = selection
-//        }
-//    }
+    @ObservedObject var movieVm:MoviesViewModel
 
     var titles: [String]
 
@@ -24,13 +18,12 @@ struct TopMenu: View {
             HStack(spacing: 0) {
                 ForEach(titles, id: \.self) { title in
                     Button(action: {
-                        self.selectIndex = titles.firstIndex(of: title) ?? 0
-                        self.selection = self.selectIndex
+                        self.movieVm.menuIndex = titles.firstIndex(of: title) ?? 0
                     }, label: {
                         Spacer()
                         Text(title)
                             .bold()
-                            .foregroundColor(self.selectIndex == titles.firstIndex(of: title) ? .white : .gray)
+                            .foregroundColor(self.movieVm.menuIndex == titles.firstIndex(of: title) ? .white : .gray)
 
                         Spacer()
                     })
@@ -46,7 +39,7 @@ struct TopMenu: View {
                             startPoint: .leading,
                             endPoint: .trailing))
                         .frame(width: geometry.size.width / CGFloat(titles.count), height: 2)
-                        .offset(x: (geometry.size.width / CGFloat(self.titles.count)) * CGFloat(selectIndex),
+                        .offset(x: (geometry.size.width / CGFloat(self.titles.count)) * CGFloat(self.movieVm.menuIndex),
                                 y: 0)
                         .animation(.default)
                 }
